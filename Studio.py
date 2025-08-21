@@ -3,7 +3,7 @@ import subprocess
 import vlc
 import difflib
 import time
-import datetime
+from datetime import datetime
     
 HOST = ''  # Listen on all available interfaces
 ICP = '192.168.1.xxx'
@@ -52,8 +52,8 @@ def play_audio(studentName):
     player.play()
 
 def successReply(studentName):
-    current_datetime = datetime.time()
-    message = f"Server receive: {studentName} at current_datetime"
+    current_datetime = datetime.now().time().strftime('%I:%M:%S')
+    message = f"Server receive: {studentName} at {current_datetime}"
     conn.sendall(message.encode("utf-8"))
 
 def failReply(studentName):
