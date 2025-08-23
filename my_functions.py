@@ -23,6 +23,7 @@ def announcement(studentName):
     print(studentName)
     play_audio(studentName)
 
+# Takes input and checks it with the names on the roster and if close enough it will return the name from the roster
 def typoCheck(studentName):
     names = []
     for key in roster.rosterWithClass:

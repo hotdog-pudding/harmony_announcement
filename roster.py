@@ -10,11 +10,15 @@ SM = '192.168.1.228'
 S = '192.168.0.134'
 PORT = 2360
 
+classroomIP = {
+    "SM" : '192.168.1.228', "S" : '192.168.0.134'
+}
+
 rosterWithClass = {
     "Raelyn A" : SM, "Apollo B" : SM, "Belle E" : SM, "Coco H" : SM,
     "Harper L" : SM, "Matthew L" : SM, "Leighton L" : SM, "Mia M" : SM,
     "Mya N" : SM, "Nikki T" : SM, "Megan U" : SM,
-    "Luke B" : S, "Daniel C" : S, "Aeneas S" : S, "Jacob S" : S,
+    "Luke B" : classroomIP["SM"], "Daniel C" : S, "Aeneas S" : S, "Jacob S" : S,
     "Sophia T" : S, "Nicholas Y" : S, "Noah C" : S, "Violet H" : S,
     "Jolin H" : S, "Karsten L" : S, "Jacob L" : S, "Oliver L" : S,
     "Victoria R" : S, "William T" : S, "Abigail C" : S, "Bianca R" : S,
@@ -35,5 +39,5 @@ rosterWithClass = {
     "Skyler Y" : CP,
     "Zachary K" : ICP, "Sadie L" : ICP, "Morgan L" : ICP, "Noemi N" : ICP,
     "Gemma O" : ICP, "Kelly P" : ICP, "Charlie S" : ICP, "Uciah T" : ICP,
-    "Natalia M" : ICP,
+    "Natalia M" : ICP
 }
