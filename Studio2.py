@@ -14,36 +14,52 @@ with my_functions.socket(my_functions.socket.AF_INET, my_functions.socket.SOCK_S
                 studentName = my_functions.typoCheck(studentName)
                 match studentName:
                     case "Luke B":
-                        my_functions.announcement(studentName, conn)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Daniel C":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Aeneas S":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jacob S":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Sophia T":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Nicholas Y":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Noah C":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Violet H":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jolin H":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Karsten L":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jacob L":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Oliver L":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Victoria R":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "William T":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Abigail C":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Bianca R":
                         my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                 my_functions.failReply(studentName)
                 
