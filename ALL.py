@@ -1,80 +1,9 @@
 import socket
-import subprocess
-import vlc
-import difflib
-import time
-    
-HOST = ''  # Listen on all available interfaces
-ICP = '192.168.1.xxx'
-CP = '192.168.1.xxx'
-HMC = '192.168.1.xxx'
-G = '192.168.1.xxx'
-BC = '192.168.1.xxx'
-CB = '192.168.1.xxx'
-SM = '192.168.0.189'
-S = '192.168.0.189'
-PORT = 2360
-
-rosterWithClass = {
-    "Raelyn A" : SM, "Apollo B" : SM, "Belle E" : SM, "Coco H" : SM,
-    "Harper L" : SM, "Matthew L" : SM, "Leighton L" : SM, "Mia M" : SM,
-    "Mya N" : SM, "Nikki T" : SM, "Megan U" : SM,
-    "Luke B" : S, "Daniel C" : S, "Aeneas S" : S, "Jacob S" : S,
-    "Sophia T" : S, "Nicholas Y" : S, "Noah C" : S, "Violet H" : S,
-    "Jolin H" : S, "Karsten L" : S, "Jacob L" : S, "Oliver L" : S,
-    "Victoria R" : S, "William T" : S, "Abigail C" : S, "Bianca R" : S,
-    "Everett H" : CB, "Jasmin H" : CB, "Claire H" : CB, "James M" : CB,
-    "James A" : CB, "Nora G" : CB, "Nathan G" : CB, "Hunter H" : CB,
-    "Ryan L" : CB, "Kaylie N" : CB,
-    "Oona B" : G, "Elliot L" : G, "Anna L" : G, "Jasper L" : G,
-    "Andrew T" : G, "Grace T" : G, "Danny U" : G, "Elyse Y" : G,
-    "Alison Z" : G,
-    "Silas G" : BC, "Mia H" : BC, "Ethan L" : BC, "Lyla M" : BC,
-    "Hannah N" : BC, "Aaron O" : BC, "Courtney S" : BC, "Ryan S" : BC,
-    "Quinn T" : BC, "Adelyn W" : BC,
-    "Iris C" : HMC, "Cori H" : HMC, "Aaron L" : HMC, "Ari N" : HMC,
-    "Tyler P" : HMC, "Jamie S" : HMC, "Penny S" : HMC, "Noah T" : HMC,
-    "Wren Y" : HMC,
-    "Liam C" : CP, "Faith G" : CP, "James H" : CP, "Jace L" : CP,
-    "Brandon N" : CP, "Wesley N" : CP, "Dylan S" : CP, "Phoebe T" : CP,
-    "Skyler Y" : CP,
-    "Zachary K" : ICP, "Sadie L" : ICP, "Morgan L" : ICP, "Noemi N" : ICP,
-    "Gemma O" : ICP, "Kelly P" : ICP, "Charlie S" : ICP, "Uciah T" : ICP,
-    "Natalia M" : ICP,
-}
-
-def play_audio(studentName):
-    instance = vlc.Instance('--no-video')
-    media = instance.media_new(f"{studentName}.mp3")
-    player = instance.media_player_new()
-    player.set_media(media)
-    player.play()
-
-def successReply(studentName):
-    message = f"Server receive: {studentName}"
-    conn.sendall(message.encode("utf-8"))
-
-def failReply(studentName):
-    message = f"{studentName} is not in this class"
-    conn.sendall(message.encode("utf-8"))
-
-def announcement(studentName):
-    print(studentName)
-    play_audio(studentName)
-    successReply(studentName)
-
-def typoCheck(studentName):
-    names = []
-    for key in rosterWithClass:
-        names.append(key)
-    closeMatch = difflib.get_close_matches(studentName, names, n=1, cutoff=0.6)
-    if closeMatch:
-        return closeMatch[0]
-    else:
-        return studentName
+import my_functions
+import roster
     
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.bind((HOST, PORT))
+    s.bind((roster.HOST, roster.PORT))
     s.listen()
     while True:
         conn, addr = s.accept()
@@ -84,171 +13,255 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 if not data:
                     break
                 studentName = data.decode("utf-8").title()
-                studentName = typoCheck(studentName)
                 match studentName:
                     case "Luke B":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Daniel C":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Aeneas S":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jacob S":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Sophia T":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Nicholas Y":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Noah C":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Violet H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jolin H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Karsten L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jacob L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Oliver L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Victoria R":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "William T":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Abigail C":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Bianca R":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Raelyn A":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Apollo B":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Belle E":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Coco H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Harper L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Matthew L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Leighton L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Mia M":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Mya N":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Nikki T":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Megan U":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Everett H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jasmin H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Claire H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "James M":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "James A":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Nora G":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
+                    case "Nathan G":
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Hunter H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Ryan L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Kaylie N":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Zachary K":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Sadie L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Morgan L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Noemi N":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Gemma O":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Kelly P":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Charlie S":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Uciah T":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Natalia M":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Liam C":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Faith G":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "James H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jace L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Brandon N":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Wesley N":
-                        announcement(studentName)
-                    case "DJ":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
+                    case "Dylan S":
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Phoebe T":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Skyler Y":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Iris C":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Cori H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Aaron L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Ari N":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Tyler P":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jamie S":
-                        announcement(studentName)
-                    case "Penny S":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
+                    case "Penelope S":
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Noah T":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Wren Y":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Silas G":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Mia H":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Ethan L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Lyla M":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Hannah N":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Aaron O":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Courtney S":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Ryan S":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Quinn T":
-                        announcement(studentName)
-                    case "Adelyn W":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
+                    case "Addie W":
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Oona B":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Elliot L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Anna L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Jasper L":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Andrew T":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Grace T":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Danny U":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Elyse Y":
-                        announcement(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
                     case "Alison Z":
-                        announcement(studentName)
-                failReply(studentName)
+                        my_functions.announcement(studentName)
+                        my_functions.successReply(studentName, conn)
+                my_functions.failReply(studentName)
                 
