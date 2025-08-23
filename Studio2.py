@@ -1,6 +1,6 @@
 import my_functions
     
-with my_functions.socket.socket(my_functions.socket.AF_INET, my_functions.socket.SOCK_STREAM) as s:
+with my_functions.socket(my_functions.socket.AF_INET, my_functions.socket.SOCK_STREAM) as s:
     s.bind((my_functions.HOST, my_functions.PORT))
     s.listen()
     while True:

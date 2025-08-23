@@ -13,7 +13,7 @@ outside1 = '192.168.1.xxx'
 outside2 = '192.168.1.xxx'
 PORT = 2360
 
-rooms = ['192.168.1.101']
+rooms = ['192.168.1.107']
 
 rosterWithClass = {
     "Raelyn A" : SM, "Apollo B" : SM, "Belle E" : SM, "Coco H" : SM,

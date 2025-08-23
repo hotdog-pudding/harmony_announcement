@@ -3,7 +3,6 @@ import subprocess
 import vlc
 import difflib
 import time
-from datetime import datetime
     
 HOST = ''  # Listen on all available interfaces
 ICP = '192.168.1.xxx'
@@ -52,8 +51,7 @@ def play_audio(studentName):
     player.play()
 
 def successReply(studentName):
-    current_datetime = datetime.now().time().strftime('%I:%M:%S')
-    message = f"Server receive: {studentName} at {current_datetime}"
+    message = f"Server receive: {studentName}"
     conn.sendall(message.encode("utf-8"))
 
 def failReply(studentName):
@@ -90,23 +88,23 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 studentName = data.decode("utf-8").title()
                 studentName = typoCheck(studentName)
                 match studentName:
-                    case "Zachary K":
+                    case "Oona B":
                         announcement(studentName)
-                    case "Sadie L":
+                    case "Elliot L":
                         announcement(studentName)
-                    case "Morgan L":
+                    case "Anna L":
                         announcement(studentName)
-                    case "Noemi N":
+                    case "Jasper L":
                         announcement(studentName)
-                    case "Gemma O":
+                    case "Andrew T":
                         announcement(studentName)
-                    case "Kelly P":
+                    case "Grace T":
                         announcement(studentName)
-                    case "Charlie S":
+                    case "Danny U":
                         announcement(studentName)
-                    case "Uciah T":
+                    case "Elyse Y":
                         announcement(studentName)
-                    case "Natalia M":
+                    case "Alison Z":
                         announcement(studentName)
                 failReply(studentName)
                 

@@ -63,8 +63,6 @@ def failReply(studentName):
 def announcement(studentName):
     print(studentName)
     play_audio(studentName)
-    time.sleep(3)
-    play_audio(studentName)
     successReply(studentName)
 
 def typoCheck(studentName):

@@ -59,8 +59,6 @@ def successReply(studentName):
 def announcement(studentName):
     print(studentName)
     play_audio(studentName)
-    time.sleep(3)
-    play_audio(studentName)
     successReply(studentName)
 
 def typoCheck(studentName):
@@ -104,6 +102,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         announcement(studentName)
                     case "Quinn T":
                         announcement(studentName)
-                    case "Adelyn W":
+                    case "Addie W":
                         announcement(studentName)
                 

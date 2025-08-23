@@ -8,9 +8,9 @@ HOST = ''  # Listen on all available interfaces
 ICP = '192.168.1.xxx'
 CP = '192.168.1.xxx'
 HMC = '192.168.1.xxx'
-G = '192.168.1.xxx'
-BC = '192.168.1.xxx'
-CB = '192.168.1.xxx'
+G = '192.168.1.153'
+BC = '192.168.1.112'
+CB = '192.168.1.101'
 SM = '192.168.0.189'
 S = '192.168.0.189'
 PORT = 2360
@@ -60,6 +60,8 @@ def failReply(studentName):
 
 def announcement(studentName):
     print(studentName)
+    play_audio(studentName)
+    time.sleep(3)
     play_audio(studentName)
     successReply(studentName)
 
@@ -122,8 +124,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         announcement(studentName)
                     case "Apollo B":
                         announcement(studentName)
-                    case "Belle E":
-                        announcement(studentName)
                     case "Coco H":
                         announcement(studentName)
                     case "Harper L":
@@ -133,8 +133,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     case "Leighton L":
                         announcement(studentName)
                     case "Mia M":
-                        announcement(studentName)
-                    case "Mya N":
                         announcement(studentName)
                     case "Nikki T":
                         announcement(studentName)
@@ -160,7 +158,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         announcement(studentName)
                     case "Zachary K":
                         announcement(studentName)
-                    case "Sadie L":
+                    case "Saadie L":
                         announcement(studentName)
                     case "Morgan L":
                         announcement(studentName)
@@ -188,7 +186,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         announcement(studentName)
                     case "Wesley N":
                         announcement(studentName)
-                    case "DJ":
+                    case "Dylan S":
                         announcement(studentName)
                     case "Phoebe T":
                         announcement(studentName)
@@ -206,7 +204,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         announcement(studentName)
                     case "Jamie S":
                         announcement(studentName)
-                    case "Penny S":
+                    case "Penelope S":
                         announcement(studentName)
                     case "Noah T":
                         announcement(studentName)
