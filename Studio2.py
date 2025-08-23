@@ -1,7 +1,9 @@
+import socket
 import my_functions
+import roster
     
-with my_functions.socket(my_functions.socket.AF_INET, my_functions.socket.SOCK_STREAM) as s:
-    s.bind((my_functions.HOST, my_functions.PORT))
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind((roster.HOST, roster.PORT))
     s.listen()
     while True:
         conn, addr = s.accept()
@@ -11,7 +13,7 @@ with my_functions.socket(my_functions.socket.AF_INET, my_functions.socket.SOCK_S
                 if not data:
                     break
                 studentName = data.decode("utf-8").title()
-                studentName = my_functions.typoCheck(studentName)
+                #studentName = my_functions.typoCheck(studentName)
                 match studentName:
                     case "Luke B":
                         my_functions.announcement(studentName)
@@ -61,5 +63,5 @@ with my_functions.socket(my_functions.socket.AF_INET, my_functions.socket.SOCK_S
                     case "Bianca R":
                         my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
-                my_functions.failReply(studentName)
+                my_functions.failReply(studentName, conn)
                 
