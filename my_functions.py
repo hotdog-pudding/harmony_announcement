@@ -50,7 +50,7 @@ def play_audio(studentName):
     player.set_media(media)
     player.play()
 
-def successReply(studentName):
+def successReply(studentName, conn):
     current_datetime = datetime.now().time().strftime('%I:%M:%S')
     message = f"Server receive: {studentName} at {current_datetime}"
     conn.sendall(message.encode("utf-8"))

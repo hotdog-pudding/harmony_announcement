@@ -14,7 +14,7 @@ with my_functions.socket(my_functions.socket.AF_INET, my_functions.socket.SOCK_S
                 studentName = my_functions.typoCheck(studentName)
                 match studentName:
                     case "Luke B":
-                        my_functions.announcement(studentName)
+                        my_functions.announcement(studentName, conn)
                     case "Daniel C":
                         my_functions.announcement(studentName)
                     case "Aeneas S":
