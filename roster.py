@@ -1,43 +1,36 @@
 HOST = ''
-ICP = '192.168.1.153'
-CP = '192.168.1.xxx'
-HMC = '192.168.1.xxx'
-G = '192.168.1.xxx'
-BC = '192.168.1.112'
-CB = '192.168.1.101'
-SM = '192.168.1.228'
-#S = '192.168.0.134'
-S = '192.168.0.134'
 PORT = 2360
 
 classroomIP = {
-    "SM" : '192.168.1.228', "S" : '192.168.0.134'
+    "SM" : '192.168.1.228', "S" : '192.168.0.134', "CB" : '192.168.1.101',
+    "G" : '192.168.1.xxx', "BC" : '192.168.1.112', "HMC" : '192.168.1.xxx',
+    "CP" : '192.168.1.xxx', "ICP" : '192.168.1.153'
 }
 
 rosterWithClass = {
-    "Raelyn A" : SM, "Apollo B" : SM, "Belle E" : SM, "Coco H" : SM,
-    "Harper L" : SM, "Matthew L" : SM, "Leighton L" : SM, "Mia M" : SM,
-    "Mya N" : SM, "Nikki T" : SM, "Megan U" : SM,
-    "Luke B" : classroomIP["SM"], "Daniel C" : S, "Aeneas S" : S, "Jacob S" : S,
-    "Sophia T" : S, "Nicholas Y" : S, "Noah C" : S, "Violet H" : S,
-    "Jolin H" : S, "Karsten L" : S, "Jacob L" : S, "Oliver L" : S,
-    "Victoria R" : S, "William T" : S, "Abigail C" : S, "Bianca R" : S,
-    "Everett H" : CB, "Jasmin H" : CB, "Claire H" : CB, "James M" : CB,
-    "James A" : CB, "Nora G" : CB, "Nathan G" : CB, "Hunter H" : CB,
-    "Ryan L" : CB, "Kaylie N" : CB,
-    "Oona B" : G, "Elliot L" : G, "Anna L" : G, "Jasper L" : G,
-    "Andrew T" : G, "Grace T" : G, "Danny U" : G, "Elyse Y" : G,
-    "Alison Z" : G,
-    "Silas G" : BC, "Mia H" : BC, "Ethan L" : BC, "Lyla M" : BC,
-    "Hannah N" : BC, "Aaron O" : BC, "Courtney S" : BC, "Ryan S" : BC,
-    "Quinn T" : BC, "Adelyn W" : BC,
-    "Iris C" : HMC, "Cori H" : HMC, "Aaron L" : HMC, "Ari N" : HMC,
-    "Tyler P" : HMC, "Jamie S" : HMC, "Penny S" : HMC, "Noah T" : HMC,
-    "Wren Y" : HMC,
-    "Liam C" : CP, "Faith G" : CP, "James H" : CP, "Jace L" : CP,
-    "Brandon N" : CP, "Wesley N" : CP, "DJ S" : CP, "Phoebe T" : CP,
-    "Skyler Y" : CP,
-    "Zachary K" : ICP, "Sadie L" : ICP, "Morgan L" : ICP, "Noemi N" : ICP,
-    "Gemma O" : ICP, "Kelly P" : ICP, "Charlie S" : ICP, "Uciah T" : ICP,
-    "Natalia M" : ICP
+    "Raelyn A" : classroomIP["SM"], "Apollo B" : classroomIP["SM"], "Belle E" : classroomIP["SM"], "Coco H" : classroomIP["SM"],
+    "Harper L" : classroomIP["SM"], "Matthew L" : classroomIP["SM"], "Leighton L" : classroomIP["SM"], "Mia M" : classroomIP["SM"],
+    "Mya N" : classroomIP["SM"], "Nikki T" : classroomIP["SM"], "Megan U" : classroomIP["SM"],
+    "Luke B" : classroomIP["S"], "Daniel C" : classroomIP["S"], "Aeneas S" : classroomIP["S"], "Jacob S" : classroomIP["S"],
+    "Sophia T" : classroomIP["S"], "Nicholas Y" : classroomIP["S"], "Noah C" : classroomIP["S"], "Violet H" : classroomIP["S"],
+    "Jolin H" : classroomIP["S"], "Karsten L" : classroomIP["S"], "Jacob L" : classroomIP["S"], "Oliver L" : classroomIP["S"],
+    "Victoria R" : classroomIP["S"], "William T" : classroomIP["S"], "Abigail C" : classroomIP["S"], "Bianca R" : classroomIP["S"],
+    "Everett H" : classroomIP["CB"], "Jasmin H" : classroomIP["CB"], "Claire H" : classroomIP["CB"], "James M" : classroomIP["CB"],
+    "James A" : classroomIP["CB"], "Nora G" : classroomIP["CB"], "Nathan G" : classroomIP["CB"], "Hunter H" : classroomIP["CB"],
+    "Ryan L" : classroomIP["CB"], "Kaylie N" : classroomIP["CB"],
+    "Oona B" : classroomIP["G"], "Elliot L" : classroomIP["G"], "Anna L" : classroomIP["G"], "Jasper L" : classroomIP["G"],
+    "Andrew T" : classroomIP["G"], "Grace T" : classroomIP["G"], "Danny U" : classroomIP["G"], "Elyse Y" : classroomIP["G"],
+    "Alison Z" : classroomIP["G"],
+    "Silas G" : classroomIP["BC"], "Mia H" : classroomIP["BC"], "Ethan L" : classroomIP["BC"], "Lyla M" : classroomIP["BC"],
+    "Hannah N" : classroomIP["BC"], "Aaron O" : classroomIP["BC"], "Courtney S" : classroomIP["BC"], "Ryan S" : classroomIP["BC"],
+    "Quinn T" : classroomIP["BC"], "Adelyn W" : classroomIP["BC"],
+    "Iris C" : classroomIP["HMC"], "Cori H" : classroomIP["HMC"], "Aaron L" : classroomIP["HMC"], "Ari N" : classroomIP["HMC"],
+    "Tyler P" : classroomIP["HMC"], "Jamie S" : classroomIP["HMC"], "Penny S" : classroomIP["HMC"], "Noah T" : classroomIP["HMC"],
+    "Wren Y" : classroomIP["HMC"],
+    "Liam C" : classroomIP["CP"], "Faith G" : classroomIP["CP"], "James H" : classroomIP["CP"], "Jace L" : classroomIP["CP"],
+    "Brandon N" : classroomIP["CP"], "Wesley N" : classroomIP["CP"], "DJ S" : classroomIP["CP"], "Phoebe T" : classroomIP["CP"],
+    "Skyler Y" : classroomIP["CP"],
+    "Zachary K" : classroomIP["ICP"], "Sadie L" : classroomIP["ICP"], "Morgan L" : classroomIP["ICP"], "Noemi N" : classroomIP["ICP"],
+    "Gemma O" : classroomIP["ICP"], "Kelly P" : classroomIP["ICP"], "Charlie S" : classroomIP["ICP"], "Uciah T" : classroomIP["ICP"],
+    "Natalia M" : classroomIP["ICP"]
 }
