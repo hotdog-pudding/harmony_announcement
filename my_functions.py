@@ -4,7 +4,7 @@ from datetime import datetime
 import roster
 
 def play_audio(studentName):
-    instance = vlc.Instance('--no-video')
+    instance = vlc.Instance('--no-video', '--play-and-exit')
     media = instance.media_new(f"{studentName}.mp3")
     player = instance.media_player_new()
     player.set_media(media)
@@ -33,4 +33,5 @@ def typoCheck(studentName):
         return closeMatch[0]
     else:
         print(f'Unable to find {studentName} in roster')
+
         return studentName
