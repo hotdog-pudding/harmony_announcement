@@ -4,7 +4,7 @@ PORT = 2360
 classroomIP = {
     "SM" : '192.168.1.228', "S" : '192.168.0.134', "CB" : '192.168.1.101',
     "G" : '192.168.1.xxx', "BC" : '192.168.1.112', "HMC" : '192.168.1.xxx',
-    "CP" : '192.168.1.xxx', "ICP" : '192.168.1.153'
+    "CP" : '192.168.1.107', "ICP" : '192.168.1.153'
 }
 
 rosterWithClass = {
@@ -33,4 +33,5 @@ rosterWithClass = {
     "Zachary K" : classroomIP["ICP"], "Sadie L" : classroomIP["ICP"], "Morgan L" : classroomIP["ICP"], "Noemi N" : classroomIP["ICP"],
     "Gemma O" : classroomIP["ICP"], "Kelly P" : classroomIP["ICP"], "Charlie S" : classroomIP["ICP"], "Uciah T" : classroomIP["ICP"],
     "Natalia M" : classroomIP["ICP"]
+
 }
