@@ -47,5 +47,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     case "Megan U":
                         my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
-                my_functions.failReply(studentName)
+                my_functions.failReply(studentName, conn)
                 

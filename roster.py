@@ -33,5 +33,4 @@ rosterWithClass = {
     "Zachary K" : classroomIP["ICP"], "Sadie L" : classroomIP["ICP"], "Morgan L" : classroomIP["ICP"], "Noemi N" : classroomIP["ICP"],
     "Gemma O" : classroomIP["ICP"], "Kelly P" : classroomIP["ICP"], "Charlie S" : classroomIP["ICP"], "Uciah T" : classroomIP["ICP"],
     "Natalia M" : classroomIP["ICP"]
-
 }
