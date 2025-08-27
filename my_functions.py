@@ -38,5 +38,4 @@ def typoCheck(studentName):
         return closeMatch[0]
     else:
         print(f'Unable to find {studentName} in roster')
-
         return studentName
