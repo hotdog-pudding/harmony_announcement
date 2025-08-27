@@ -4,7 +4,7 @@ from my_functions import typoCheck
 
 while True:    
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        studentName = input("").title()
+        studentName = input("Student: ").title()
         studentName = typoCheck(studentName)
         for key in roster.rosterWithClass:
             if studentName == key:
