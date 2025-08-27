@@ -2,6 +2,7 @@ import vlc
 import difflib
 from datetime import datetime
 import roster
+import time
 
 def play_audio(studentName):
     instance = vlc.Instance('--no-video', '--play-and-exit')
@@ -9,6 +10,10 @@ def play_audio(studentName):
     player = instance.media_player_new()
     player.set_media(media)
     player.play()
+    time.sleep(5)
+    media.release()
+    player.release()
+    instance.release()
 
 def successReply(studentName, conn):
     current_datetime = datetime.now().time().strftime('%I:%M:%S')

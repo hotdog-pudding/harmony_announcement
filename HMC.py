@@ -32,7 +32,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     case "Jamie S":
                         my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
-                    case "Penelope S":
+                    case "Penny S":
                         my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
                     case "Noah T":
