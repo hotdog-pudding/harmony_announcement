@@ -16,6 +16,7 @@ def play_audio(studentName):
     instance.release()
 
 def successReply(studentName, conn):
+    print(studentName)
     current_datetime = datetime.now().time().strftime('%I:%M:%S')
     message = f"Classroom announced: {studentName} at {current_datetime}"
     conn.sendall(message.encode("utf-8"))
@@ -23,11 +24,6 @@ def successReply(studentName, conn):
 def failReply(studentName, conn):
     message = f"{studentName} could not be found in the roster."
     conn.sendall(message.encode("utf-8"))
-
-def announcement(studentName, conn):
-    print(studentName)
-    successReply(studentName, conn)
-    play_audio(studentName)
 
 def printSeparator():
     print(f"{'-' * 37}")

@@ -20,11 +20,9 @@ while True:
                     data = s.recv(1024)
                     received_response = data.decode("utf-8")
                     print(received_response)
-                    my_functions.printSeparator()
                 except:
                     print(f'{studentName}')
                     print(my_functions.timeOutMsg(studentName))
-                    my_functions.printSeparator()
                     continue
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.settimeout(2.0)
@@ -37,6 +35,5 @@ while True:
                     data = s.recv(1024)
                     received_response = data.decode("utf-8")
                 except:
-                    print(f'{studentName}')
                     print(f'Unable to connect to outside zone')
-                    my_functions.printSeparator()
+    my_functions.printSeparator()

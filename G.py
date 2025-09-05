@@ -15,31 +15,31 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 studentName = data.decode("utf-8").title()
                 match studentName:
                     case "Oona B":
-                        my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName) 
                     case "Elliot L":
-                        my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName) 
                     case "Anna L":
-                        my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName) 
                     case "Jasper L":
-                        my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName) 
                     case "Andrew T":
-                        my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName) 
                     case "Grace T":
-                        my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName) 
                     case "Danny U":
-                        my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName) 
                     case "Elyse Y":
-                        my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName) 
                     case "Alison Z":
-                        my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName) 
                 my_functions.failReply(studentName, conn)
                 
