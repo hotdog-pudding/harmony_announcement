@@ -15,14 +15,14 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 studentName = data.decode("utf-8").title()
                 match studentName:
                     case "Luke B":
-                        my_functions.announcement(studentName)
-                        my_functions.successReply(studentName, conn)
+                        my_functions.announcement(studentName, conn)
+                        #my_functions.successReply(studentName, conn)
                     case "Daniel C":
-                        my_functions.announcement(studentName)
-                        my_functions.successReply(studentName, conn)
+                        my_functions.announcement(studentName, conn)
+                        #my_functions.successReply(studentName, conn)
                     case "Aeneas S":
-                        my_functions.announcement(studentName)
-                        my_functions.successReply(studentName, conn)
+                        my_functions.announcement(studentName, conn)
+                        #my_functions.successReply(studentName, conn)
                     case "Jacob S":
                         my_functions.announcement(studentName)
                         my_functions.successReply(studentName, conn)
