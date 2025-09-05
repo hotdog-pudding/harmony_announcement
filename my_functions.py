@@ -17,16 +17,26 @@ def play_audio(studentName):
 
 def successReply(studentName, conn):
     current_datetime = datetime.now().time().strftime('%I:%M:%S')
-    message = f"Server receive: {studentName} at {current_datetime}"
+    message = f"Classroom announced: {studentName} at {current_datetime}"
     conn.sendall(message.encode("utf-8"))
 
 def failReply(studentName, conn):
     message = f"{studentName} could not be found in the roster."
     conn.sendall(message.encode("utf-8"))
 
-def announcement(studentName):
+def announcement(studentName, conn):
     print(studentName)
+    successReply(studentName, conn)
     play_audio(studentName)
+
+def printSeparator():
+    print(f"{'-' * 37}")
+
+def timeOutMsg(studentName):
+    return f"Unable to connect to {roster.rosterWithClass[studentName]}"
+
+def sendMsg(studentName):
+    print(f"Sending {studentName} to {roster.rosterWithClass[studentName]}")
 
 # Takes input and checks it with the names on the roster and if close enough it will return the name from the roster
 def typoCheck(studentName):
