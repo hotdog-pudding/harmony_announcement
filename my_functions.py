@@ -2,18 +2,30 @@ import vlc
 import difflib
 from datetime import datetime
 import roster
-import time
 
+import playsound
+import threading
+
+def play_audio_in_background(audio_file_path):
+    playsound.playsound(audio_file_path, True)
+
+def play_audio(studentName):
+    audio_file = f"{studentName}.mp3"
+    audio_thread = threading.Thread(target=play_audio_in_background, args=(audio_file,))
+    audio_thread.start()
+
+'''
 def play_audio(studentName):
     instance = vlc.Instance('--no-video', '--play-and-exit')
     media = instance.media_new(f"{studentName}.mp3")
     player = instance.media_player_new()
     player.set_media(media)
     player.play()
-    time.sleep(5)
-    media.release()
-    player.release()
-    instance.release()
+    #time.sleep(5)
+    #media.release()
+    #player.release()
+    #instance.release()
+    '''
 
 def successReply(studentName, conn):
     print(studentName)
