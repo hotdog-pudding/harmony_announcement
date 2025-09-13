@@ -35,5 +35,5 @@ while True:
                     data = s.recv(1024)
                     received_response = data.decode("utf-8")
                 except:
-                    print(f'Unable to connect to outside zone')
+                    print(f'Unable to connect to Zone 1 (192.168.1.18)')
     my_functions.printSeparator()

@@ -1,8 +1,6 @@
-import vlc
 import difflib
 from datetime import datetime
 import roster
-
 import playsound
 import threading
 
@@ -10,22 +8,9 @@ def play_audio_in_background(audio_file_path):
     playsound.playsound(audio_file_path, True)
 
 def play_audio(studentName):
-    audio_file = f"{studentName}.mp3"
+    audio_file = f"/home/pudding/Desktop/Announcement/{studentName}.mp3"
     audio_thread = threading.Thread(target=play_audio_in_background, args=(audio_file,))
     audio_thread.start()
-
-'''
-def play_audio(studentName):
-    instance = vlc.Instance('--no-video', '--play-and-exit')
-    media = instance.media_new(f"{studentName}.mp3")
-    player = instance.media_player_new()
-    player.set_media(media)
-    player.play()
-    #time.sleep(5)
-    #media.release()
-    #player.release()
-    #instance.release()
-    '''
 
 def successReply(studentName, conn):
     print(studentName)
@@ -33,18 +18,18 @@ def successReply(studentName, conn):
     message = f"Classroom announced: {studentName} at {current_datetime}"
     conn.sendall(message.encode("utf-8"))
 
-def failReply(studentName, conn):
+def notOnRosterReply(studentName, conn):
     message = f"{studentName} could not be found in the roster."
     conn.sendall(message.encode("utf-8"))
 
 def printSeparator():
-    print(f"{'-' * 37}")
+    print(f"{'-' * 57}")
 
 def timeOutMsg(studentName):
-    return f"Unable to connect to {roster.rosterWithClass[studentName]}"
+    return f"Unable to connect to classroom ({roster.rosterWithClass[studentName]})"
 
 def sendMsg(studentName):
-    print(f"Sending {studentName} to {roster.rosterWithClass[studentName]}")
+    print(f"Student found : {studentName}")
 
 # Takes input and checks it with the names on the roster and if close enough it will return the name from the roster
 def typoCheck(studentName):

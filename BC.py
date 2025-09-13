@@ -44,4 +44,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     case "Addie W":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName) 
-                my_functions.failReply(studentName, conn)
+                my_functions.notOnRosterReply(studentName, conn)
