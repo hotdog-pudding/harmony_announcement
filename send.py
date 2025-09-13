@@ -16,7 +16,7 @@ while True:
                     s.connect((roster.rosterWithClass[studentName], roster.PORT))
                     name_bytes = studentName.encode("utf-8")
                     s.sendall(name_bytes)
-                    my_functions.sendMsg(studentName)
+                    my_functions.studentFoundReply(studentName)
                     data = s.recv(1024)
                     received_response = data.decode("utf-8")
                     print(received_response)
