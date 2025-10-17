@@ -13,10 +13,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 if not data:
                     break
                 studentName = data.decode("utf-8").title()
-                match studentName:
-                    case "Luke B":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName)                
+                match studentName:          
                     case "Daniel C":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
@@ -60,6 +57,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
                     case "Bianca R":
+                        my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName)
+                    case "Leo L":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
                     case "Raelyn A":
@@ -176,9 +176,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     case "Phoebe T":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
-                    case "Skyler Y":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName)
                     case "Iris C":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
@@ -204,6 +201,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
                     case "Wren Y":
+                        my_functions.successReply(studentName, conn)
+                        my_functions.play_audio(studentName)
+                    case "Emma L":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
                     case "Silas G":
@@ -234,9 +234,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
                     case "Addie W":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName)
-                    case "Oona B":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
                     case "Elliot L":
