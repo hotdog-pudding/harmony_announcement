@@ -32,9 +32,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     case "Noah C":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
-                    case "Violet H":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName)
                     case "Jolin H":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName)
