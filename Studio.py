@@ -14,9 +14,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     break
                 studentName = data.decode("utf-8").title()
                 match studentName:
-                    case "Luke B":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
                     case "Daniel C":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName) 
@@ -33,9 +30,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName) 
                     case "Noah C":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
-                    case "Violet H":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName) 
                     case "Jolin H":
