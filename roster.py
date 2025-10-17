@@ -17,7 +17,7 @@ rosterWithClass = {
     "Harper L" : classroomIP["SM"], "Matthew L" : classroomIP["SM"], "Leighton L" : classroomIP["SM"], "Mia M" : classroomIP["SM"],
     "Mya N" : classroomIP["SM"], "Nikki T" : classroomIP["SM"], "Megan U" : classroomIP["SM"],
     "Daniel C" : classroomIP["S"], "Aeneas S" : classroomIP["S"], "Jacob S" : classroomIP["S"],
-    "Sophia T" : classroomIP["S"], "Nicholas Y" : classroomIP["S"], "Noah C" : classroomIP["S"], "Violet H" : classroomIP["S"],
+    "Sophia T" : classroomIP["S"], "Nicholas Y" : classroomIP["S"], "Noah C" : classroomIP["S"],
     "Jolin H" : classroomIP["S"], "Karsten L" : classroomIP["S"], "Jacob L" : classroomIP["S"], "Oliver L" : classroomIP["S"],
     "Victoria R" : classroomIP["S"], "William T" : classroomIP["S"], "Abigail C" : classroomIP["S"], "Bianca R" : classroomIP["S"],
     "Leo L" : classroomIP["S"],
