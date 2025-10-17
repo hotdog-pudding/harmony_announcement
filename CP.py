@@ -38,8 +38,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     case "Phoebe T":
                         my_functions.successReply(studentName, conn)
                         my_functions.play_audio(studentName) 
-                    case "Skyler Y":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
                 my_functions.notOnRosterReply(studentName, conn)
                 
