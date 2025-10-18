@@ -9,7 +9,7 @@ while True:
     studentName = my_functions.typoCheck(studentName)
     
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.settimeout(2.0)
+        s.settimeout(0.5)
         for key in roster.rosterWithClass:
             if studentName == key:
                 try:
