@@ -1,6 +1,21 @@
 import socket
 import my_functions
 import roster
+import queue
+import threading
+import playsound
+
+def play_sound_from_queue(sound_queue):
+    while True:
+        sound_file = sound_queue.get()
+        if sound_file is None:
+            break
+        playsound.playsound(sound_file)
+        sound_queue.task_done()
+
+sound_queue = queue.Queue()
+sound_thread = threading.Thread(target=play_sound_from_queue, args=(sound_queue,))
+sound_thread.start()
     
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((roster.HOST, roster.PORT))
@@ -13,36 +28,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 if not data:
                     break
                 studentName = data.decode("utf-8").title()
-                match studentName:
-                    case "Iris C":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
-                    case "Cori H":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
-                    case "Aaron L":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
-                    case "Ari N":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
-                    case "Tyler P":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
-                    case "Jamie S":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
-                    case "Penny S":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
-                    case "Noah T":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName) 
-                    case "Wren Y":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName)
-                    case "Emma L":
-                        my_functions.successReply(studentName, conn)
-                        my_functions.play_audio(studentName)  
+                my_functions.successReply(studentName, conn)
+                sound_queue.put(f"{studentName}.mp3") 
                 my_functions.notOnRosterReply(studentName, conn)
-                
