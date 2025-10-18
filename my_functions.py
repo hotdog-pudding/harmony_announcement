@@ -17,7 +17,7 @@ def play_audio(studentName):
 def play_sound_from_queue(sound_queue):
     while True:
         sound_file = sound_queue.get()
-        playsound(sound_file)
+        playsound.playsound(sound_file)
         sound_queue.task_done()
 
 def successReply(studentName, conn):
