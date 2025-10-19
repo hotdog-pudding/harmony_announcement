@@ -5,16 +5,6 @@ import queue
 import threading
 import playsound
 
-"""
-def play_sound_from_queue(sound_queue):
-    while True:
-        sound_file = sound_queue.get()
-        if sound_file is None:
-            break
-        playsound.playsound(sound_file)
-        sound_queue.task_done()
-        """
-
 sound_queue = queue.Queue()
 sound_thread = threading.Thread(target=my_functions.play_sound_from_queue, args=(sound_queue,))
 sound_thread.start()
