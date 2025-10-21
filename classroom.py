@@ -21,5 +21,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     break
                 studentName = data.decode("utf-8").title()
                 my_functions.successReply(studentName, conn)
-                sound_queue.put(f"{studentName}.mp3") 
+                sound_queue.put(f"/audio/{studentName}.mp3") 
                 my_functions.notOnRosterReply(studentName, conn)
