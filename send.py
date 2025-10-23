@@ -38,7 +38,11 @@ while True:
                     print(my_functions.timeOutMsg(studentName))
                     continue
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+<<<<<<< HEAD
         #s.settimeout(2.0)
+=======
+        s.settimeout(0.5)
+>>>>>>> 11fbb119a84a56acd1938f9a81f9c94e42e5fa66
         for key in roster.rosterWithClass:
             if studentName == key:
                 try:

@@ -4,13 +4,21 @@ import roster
 import playsound
 import threading
 
+#not being used
 def play_audio_in_background(audio_file_path):
     playsound.playsound(audio_file_path, True)
 
+#not being used
 def play_audio(studentName):
     audio_file = f"/home/pudding/Desktop/Announcement/{studentName}.mp3"
     audio_thread = threading.Thread(target=play_audio_in_background, args=(audio_file,))
     audio_thread.start()
+
+def play_sound_from_queue(sound_queue):
+    while True:
+        sound_file = sound_queue.get()
+        playsound.playsound(sound_file)
+        sound_queue.task_done()
 
 def successReply(studentName, conn):
     print(studentName)
