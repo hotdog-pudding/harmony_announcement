@@ -26,7 +26,7 @@ rosterWithClass = {
     "Ryan L" : classroomIP["CB"], "Kaylie N" : classroomIP["CB"],
     "Elliot L" : classroomIP["G"], "Anna L" : classroomIP["G"], "Jasper L" : classroomIP["G"],
     "Andrew T" : classroomIP["G"], "Grace T" : classroomIP["G"], "Danny U" : classroomIP["G"], "Elyse Y" : classroomIP["G"],
-    "Alison Z" : classroomIP["G"],
+    "Alison Z" : classroomIP["G"], "Tyler M" : classroomIP["G"],
     "Silas G" : classroomIP["BC"], "Mia H" : classroomIP["BC"], "Ethan L" : classroomIP["BC"], "Lyla M" : classroomIP["BC"],
     "Hannah N" : classroomIP["BC"], "Aaron O" : classroomIP["BC"], "Courtney S" : classroomIP["BC"], "Ryan S" : classroomIP["BC"],
     "Quinn T" : classroomIP["BC"], "Addie W" : classroomIP["BC"],
@@ -35,6 +35,7 @@ rosterWithClass = {
     "Wren Y" : classroomIP["HMC"], "Emma L" : classroomIP["HMC"],
     "Liam C" : classroomIP["CP"], "Faith G" : classroomIP["CP"], "James H" : classroomIP["CP"], "Jace L" : classroomIP["CP"],
     "Brandon N" : classroomIP["CP"], "Wesley N" : classroomIP["CP"], "Dylan S" : classroomIP["CP"], "Phoebe T" : classroomIP["CP"],
+    "Tracy M" : classroomIP["CP"],
     "Zachary K" : classroomIP["ICP"], "Sadie L" : classroomIP["ICP"], "Morgan L" : classroomIP["ICP"], "Noemi N" : classroomIP["ICP"],
     "Gemma O" : classroomIP["ICP"], "Kelly P" : classroomIP["ICP"], "Charlie S" : classroomIP["ICP"], "Uciah T" : classroomIP["ICP"],
     "Natalia M" : classroomIP["ICP"]
