@@ -21,7 +21,7 @@ def play_sound_from_queue(sound_queue):
         sound_queue.task_done()
 
 def successReply(studentName, conn):
-    print(studentName)
+    print(f"{studentName} at {current_datetime}")
     current_datetime = datetime.now().time().strftime('%I:%M:%S')
     message = f"Classroom announced: {studentName} at {current_datetime}"
     conn.sendall(message.encode("utf-8"))
