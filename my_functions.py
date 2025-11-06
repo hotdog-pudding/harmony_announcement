@@ -36,9 +36,6 @@ def printSeparator():
 def timeOutMsg(studentName):
     return f"Unable to connect to classroom ({roster.rosterWithClass[studentName]})"
 
-def studentFoundReply(studentName):
-    print(f"Student found : {studentName}")
-
 # Takes input and checks it with the names on the roster and if close enough it will return the name from the roster
 def typoCheck(studentName):
     names = []
