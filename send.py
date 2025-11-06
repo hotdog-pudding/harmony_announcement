@@ -53,7 +53,7 @@ while True:
             my_functions.printSeparator()
             studentName = my_functions.typoCheck(studentName)
 
-            servers = [("192.168.1.18", 2360), ("192.168.1.15", 2360), ("192.168.1.13", 2360), ("192.168.1.11", 2360)]
+            servers = [("192.168.0.122", 2360), ("192.168.1.15", 2360), ("192.168.1.13", 2360), ("192.168.1.11", 2360)]
             threads = []
             for host, port in servers:
                 t = threading.Thread(target=connect_to_server, args=(host, port, studentName))
