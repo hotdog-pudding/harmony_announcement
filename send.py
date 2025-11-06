@@ -16,6 +16,8 @@ def find_classroom_ip(studentName):
      for key in roster.rosterWithClass:
           if studentName == key:
                return roster.rosterWithClass[studentName]
+          
+same_first_names = ["James", "Aaron", "Tyler", "Mia", "Ryan"]
                   
 while True:
     my_functions.printSeparator()
@@ -31,6 +33,9 @@ while True:
             studentName = input("Student Name('exit' to select mode) : ").title()
             if studentName == "Exit":
                  break
+            if studentName in same_first_names:
+                 print("\033[41m\033[97mPlease also enter last name inital\033[0m")
+                 continue
             original_student_name = studentName
             studentName = my_functions.typoCheck(studentName)
             if studentName == "Error":
