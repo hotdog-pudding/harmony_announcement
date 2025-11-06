@@ -18,22 +18,23 @@ def find_classroom_ip(studentName):
                return roster.rosterWithClass[studentName]
                   
 while True:
-    my_functions.printSeparator #not showing?
+    my_functions.printSeparator()
     print("Enter 1 or 2 to select mode")
     print("1 - Send to individual classroooms")
     print("2 - Send to Zone 1, CP, HMC, and Studio (Friday)")
-    my_functions.printSeparator #not showing?
+    my_functions.printSeparator()
     mode = input()
 
     if mode == "1":
         while True:
+            my_functions.printSeparator()
             studentName = input("Student Name('exit' to select mode) : ").title()
             if studentName == "Exit":
                  break
-            my_functions.printSeparator()
+            original_student_name = studentName
             studentName = my_functions.typoCheck(studentName)
             if studentName == "Error":
-                print(f'Unable to find {studentName} in roster')
+                print(f'Unable to find {original_student_name} in roster')
                 continue
 
             servers = [("192.168.1.18", 2360)]
