@@ -2,7 +2,7 @@ import socket
 import roster
 import my_functions
 import threading
-
+import os
 
 def connect_to_server(host, port, studentName):
         try:
@@ -17,6 +17,12 @@ def find_classroom_ip(studentName):
           if studentName == key:
                return roster.rosterWithClass[studentName]
           
+def clear_screen():
+    if os.name == "nt":
+        _ = os.system("cls")
+    else:
+        _ = os.system("clear")
+          
 same_first_names = ["James", "Aaron", "Tyler", "Mia", "Ryan"]
                   
 while True:
@@ -28,14 +34,17 @@ while True:
     mode = input()
 
     if mode == "1":
+        clear_screen()
         while True:
-            my_functions.printSeparator()
+            print("\033[32mMode 1 - Sent to all classrooms\033[0m")
             studentName = input("Student Name('exit' to select mode) : ").title()
-            if studentName == "Exit":
-                 break
+            my_functions.printSeparator()
+            if studentName == "Exit": 
+                clear_screen()
+                break
             if studentName in same_first_names:
-                 print("\033[41m\033[97mPlease also enter last name inital\033[0m")
-                 continue
+                print("\033[41m\033[97mPlease also enter last name inital\033[0m")
+                continue
             original_student_name = studentName
             studentName = my_functions.typoCheck(studentName)
             if studentName == "Error":
@@ -51,12 +60,23 @@ while True:
                 threads.append(t)
 
     elif mode == "2":
+         clear_screen()
          while True:
+            print("\033[32mMode 2 - Sent to Zone 1, CP, HMC, and Studio\033[0m")
             studentName = input("Student Name('exit' to select mode) : ").title()
-            if studentName == "Exit":
-                 break
             my_functions.printSeparator()
+            if studentName == "Exit":
+                 clear_screen()
+                 break
+            if studentName in same_first_names:
+                print("\033[41m\033[97mPlease also enter last name inital\033[0m")
+                continue
             studentName = my_functions.typoCheck(studentName)
+            original_student_name = studentName
+            studentName = my_functions.typoCheck(studentName)
+            if studentName == "Error":
+                print(f'Unable to find {original_student_name} in roster')
+                continue
 
             servers = [("192.168.1.18", 2360), ("192.168.1.15", 2360), ("192.168.1.13", 2360), ("192.168.1.11", 2360)]
             threads = []
@@ -65,8 +85,8 @@ while True:
                 t.start()
                 threads.append(t)
     else:
-         print("Invalid selection")
-         my_functions.printSeparator()
+        my_functions.printSeparator() 
+        print("Invalid selection")
           
 '''
 while True:    
