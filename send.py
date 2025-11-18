@@ -6,7 +6,7 @@ import os
 
 def connect_to_server(host, port, studentName):
         try:
-            with socket.create_connection((host,port), timeout=10) as s:
+            with socket.create_connection((host,port), timeout=3) as s:
                 s.sendall(bytes(studentName, encoding='utf-8'))
         except Exception as e:
             print(f"Error: {e}")
@@ -22,17 +22,19 @@ def clear_screen():
         _ = os.system("cls")
     else:
         _ = os.system("clear")
-          
-same_first_names = ["James", "Aaron", "Tyler", "Mia", "Ryan"]
-                  
-while True:
+
+def select_mode() -> str:
     my_functions.printSeparator()
     print("Enter 1 or 2 to select mode")
     print("1 - Send to individual classroooms")
     print("2 - Send to Zone 1, CP, HMC, and Studio (Friday)")
     my_functions.printSeparator()
-    mode = input()
+    return input()
 
+same_first_names = ["James", "Aaron", "Tyler", "Mia", "Ryan"]
+                  
+while True:
+    mode = select_mode()
     if mode == "1":
         clear_screen()
         while True:
