@@ -4,24 +4,28 @@ import my_functions
 import threading
 import os
 
+
 def connect_to_server(host, port, studentName):
-        try:
-            with socket.create_connection((host,port), timeout=3) as s:
-                s.sendall(bytes(studentName, encoding='utf-8'))
-        except Exception as e:
-            print(f"Error: {e}")
-            print(f"{studentName} - Unable to connect to {host}")
+    try:
+        with socket.create_connection((host, port), timeout=3) as s:
+            s.sendall(bytes(studentName, encoding="utf-8"))
+    except Exception as e:
+        print(f"Error: {e}")
+        print(f"{studentName} - Unable to connect to {host}")
+
 
 def find_classroom_ip(studentName):
-     for key in roster.rosterWithClass:
-          if studentName == key:
-               return roster.rosterWithClass[studentName]
-          
+    for key in roster.rosterWithClass:
+        if studentName == key:
+            return roster.rosterWithClass[studentName]
+
+
 def clear_screen():
     if os.name == "nt":
         _ = os.system("cls")
     else:
         _ = os.system("clear")
+
 
 def select_mode() -> str:
     my_functions.printSeparator()
@@ -31,8 +35,9 @@ def select_mode() -> str:
     my_functions.printSeparator()
     return input()
 
-same_first_names = ["James", "Aaron", "Tyler", "Mia", "Ryan"]
-                  
+
+same_first_names = ["James", "Aaron", "Tyler", "Mia", "Ryan", "Phoebe"]
+
 while True:
     mode = select_mode()
     if mode == "1":
@@ -41,7 +46,7 @@ while True:
             print("\033[32mMode 1 - Sent to all classrooms\033[0m")
             studentName = input("Student Name('exit' to select mode) : ").title()
             my_functions.printSeparator()
-            if studentName == "Exit": 
+            if studentName == "Exit":
                 clear_screen()
                 break
             if studentName in same_first_names:
@@ -50,26 +55,28 @@ while True:
             original_student_name = studentName
             studentName = my_functions.typoCheck(studentName)
             if studentName == "Error":
-                print(f'Unable to find {original_student_name} in roster')
+                print(f"Unable to find {original_student_name} in roster")
                 continue
 
             servers = [("192.168.1.18", 2360)]
             servers.append((find_classroom_ip(studentName), 2360))
             threads = []
             for host, port in servers:
-                t = threading.Thread(target=connect_to_server, args=(host, port, studentName))
+                t = threading.Thread(
+                    target=connect_to_server, args=(host, port, studentName)
+                )
                 t.start()
                 threads.append(t)
 
     elif mode == "2":
-         clear_screen()
-         while True:
+        clear_screen()
+        while True:
             print("\033[32mMode 2 - Sent to Zone 1, CP, HMC, and Studio\033[0m")
             studentName = input("Student Name('exit' to select mode) : ").title()
             my_functions.printSeparator()
             if studentName == "Exit":
-                 clear_screen()
-                 break
+                clear_screen()
+                break
             if studentName in same_first_names:
                 print("\033[41m\033[97mPlease also enter last name inital\033[0m")
                 continue
@@ -77,20 +84,27 @@ while True:
             original_student_name = studentName
             studentName = my_functions.typoCheck(studentName)
             if studentName == "Error":
-                print(f'Unable to find {original_student_name} in roster')
+                print(f"Unable to find {original_student_name} in roster")
                 continue
 
-            servers = [("192.168.1.18", 2360), ("192.168.1.15", 2360), ("192.168.1.13", 2360), ("192.168.1.11", 2360)]
+            servers = [
+                ("192.168.1.18", 2360),
+                ("192.168.1.15", 2360),
+                ("192.168.1.13", 2360),
+                ("192.168.1.11", 2360),
+            ]
             threads = []
             for host, port in servers:
-                t = threading.Thread(target=connect_to_server, args=(host, port, studentName))
+                t = threading.Thread(
+                    target=connect_to_server, args=(host, port, studentName)
+                )
                 t.start()
                 threads.append(t)
     else:
-        my_functions.printSeparator() 
+        my_functions.printSeparator()
         print("Invalid selection")
-          
-'''
+
+"""
 while True:    
     studentName = input("Student: ").title()
     my_functions.printSeparator()
@@ -133,4 +147,4 @@ while True:
          t = threading.Thread(target=connect_to_server, args=(host, port, studentName))
          t.start()
          threads.append(t)
-'''
+"""
