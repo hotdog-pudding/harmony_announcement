@@ -42,6 +42,7 @@ rosterWithClass = {
     "Jacob L": classroomIP["SM"],
     "Victoria R": classroomIP["SM"],
     "William T": classroomIP["SM"],
+    "Olivia Z": classroomIP["SM"],
     "Everett H": classroomIP["CB"],
     "Jasmin H": classroomIP["CB"],
     "James M": classroomIP["CB"],
