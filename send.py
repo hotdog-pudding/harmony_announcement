@@ -36,7 +36,7 @@ def select_mode() -> str:
     return input()
 
 
-same_first_names = ["James", "Aaron", "Tyler", "Mia", "Ryan", "Phoebe"]
+same_first_names = ["James", "Aaron", "Tyler", "Mia", "Ryan", "Phoebe", "Olivia"]
 
 while True:
     mode = select_mode()
